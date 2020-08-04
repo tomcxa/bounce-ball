@@ -19,6 +19,13 @@ body {
 }
 
 .btn {
+  outline: none;
   padding: 0.5rem 0.8rem;
+  cursor: pointer;
   border: 1px solid #000;
+  background-color: #eee;
+}
+
+.btn:hover {
+  background-color: rgb(163, 151, 151);
 }
