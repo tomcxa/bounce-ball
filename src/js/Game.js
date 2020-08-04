@@ -90,7 +90,8 @@ export default class Game {
 
             if (this.jump) {
                 this.jumpCount++;
-                this.jumpHeight = 4 * this.jumpLength * Math.sin((Math.PI * this.jumpCount) / this.jumpLength);
+                this.jumpHeight = 4 * this.jumpLength
+                    * Math.sin((Math.PI * this.jumpCount) / this.jumpLength);
             }
             if (this.jumpCount > this.jumpLength) {
                 this.jumpCount = 0;
@@ -99,7 +100,9 @@ export default class Game {
             }
 
             this.ballY = this.canvas.height - this.ballD - this.jumpHeight;
-            const ball = new Ball(this.ctx, { x: this.ballX, y: this.ballY, radius: this.ballRadius });
+            const ball = new Ball(this.ctx, {
+                x: this.ballX, y: this.ballY, radius: this.ballRadius,
+            });
             const earth = new Earth(this.ctx, {
                 x: 0,
                 y: this.canvas.height - this.ballRadius,
