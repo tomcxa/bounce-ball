@@ -44,14 +44,19 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.render();
     }
 
-    function checkLose(brick) {
-        if (((ballY <= brick.y + brickHeight - 10
+    function isTouch(brick) {
+        const result = ((ballY <= brick.y + brickHeight - 20
             && ballY >= brick.y)
-            || ((ballY + ballRadius * 2 <= brick.y)
-                && (ballY + ballRadius * 2 >= brick.y + brickHeight)))
-            && (ballX + ballRadius * 2 >= brick.x + 10
-                && ballX <= brick.x + brickWidth)
-        ) {
+            || ((ballY + ballDiameter <= brick.y)
+                && (ballY + ballDiameter >= brick.y + brickHeight)))
+            && (ballX + ballDiameter >= brick.x + 20
+                && ballX <= brick.x + brickWidth);
+
+        return result;
+    }
+
+    function checkLose(brick) {
+        if (isTouch(brick)) {
             cancelAnimationFrame(frameId);
             showModal('You lose!');
         }
