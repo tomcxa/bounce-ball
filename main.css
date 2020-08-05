@@ -1,0 +1,1 @@
+body{background:#eee;text-align:center}.app{display:flex;justify-content:center;align-items:center}.modal{box-sizing:border-box;position:absolute;width:200px;background-color:#fff;padding:1rem}.btn,.modal{border:1px solid #000}.btn{outline:none;padding:.5rem .8rem;cursor:pointer;background-color:#eee}.btn:hover{background-color:#a39797}
